@@ -1,8 +1,8 @@
-let p1 = Promise.resolve("Resolve me");
+let p1 = Promise.resolve("Resolve");
 p1.then((res) => console.log(`${res}`));
 
 let p2 = new Promise(function (resolve, reject){
-    setTimeout(() => resolve(`Resolve me 2`), 2000);
+    setTimeout(() => resolve(`Resolve 2`), 2000);
 });
 
 p2.then((res) => console.log(`${res}`));
@@ -25,7 +25,7 @@ let idade = 15;
 
 let p4 = new Promise((resolve, reject) => {
     if (idade <= 17) {
-        throw new Error('Não pode entrar!');
+        reject('Não pode entrar!');
     } else {
         resolve('Pode entrar');
     }
